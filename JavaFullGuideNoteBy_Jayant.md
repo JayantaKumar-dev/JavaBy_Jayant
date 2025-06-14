@@ -18,7 +18,7 @@ This course is 100% free and beginner-friendly, designed to take you from **zero
 ✅ Popular language in software development  
 ✅ Strong community and open-source libraries  
 ✅ Used in Android apps, enterprise software, web apps, and more  
-✅ Frequently asked in interviews  
+✅ Best for interviews  
 ✅ Platform-independent – runs on Windows, Mac, Linux  
 ✅ Base for learning Spring Boot, Hibernate, and Microservices
 
@@ -95,7 +95,7 @@ This course is 100% free and beginner-friendly, designed to take you from **zero
 
 ## 🔜 Next Topic
 
-➡️ **Java Setup: Install JDK + IntelliJ IDEA + Hello World Program**
+➡️ **Java Setup: Install JDK + Eclipse + Hello World Program**
 
 ---
 
