@@ -175,9 +175,10 @@ If javac not found:
 
 1. Go to [https://www.eclipse.org/downloads/](https://www.eclipse.org/downloads/)
 2. Download *Eclipse IDE for Java Developers* or Download *Eclipse IDE for Enterprise Edition*(If you want to do web development in future)
-3. Install and launch it.
-4. Select a *workspace folder* (where your Java projects will be saved)
-5. Eclipse opens with a welcome screen. Close it.
+3. Go for Enterprise Edition: [https://www.eclipse.org/downloads/packages/release/2024-06/r/eclipse-ide-enterprise-java-and-web-developers](https://www.eclipse.org/downloads/packages/release/2024-06/r/eclipse-ide-enterprise-java-and-web-developers)
+4. Install and launch it.
+5. Select a *workspace folder* (where your Java projects will be saved)
+6. Eclipse opens with a welcome screen. Close it.
 
 ---
 
