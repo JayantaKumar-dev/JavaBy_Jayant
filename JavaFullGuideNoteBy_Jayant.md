@@ -405,6 +405,20 @@ String name = "Jayant";
 int[] numbers = {1, 2, 3};
 ```
 
+
+### 🔍 Key Differences Between Primitive and Non-Primitive Types
+
+| Feature               | Primitive Data Type               | Non-Primitive Data Type               |
+|-----------------------|-----------------------------------|---------------------------------------|
+| **Definition**        | Basic built-in data types         | Custom/reference types (classes)      |
+| **Size**             | Fixed (e.g., int=4 bytes)        | Variable (depends on object)          |
+| **Memory**           | Stored in stack memory           | Object in heap, reference in stack    |
+| **Objects**          | Not objects                      | Are objects                           |
+| **Methods**          | Cannot call methods              | Have built-in methods                 |
+| **Example**          | `int`, `char`, `boolean`         | `String`, `Array`, `Class`, `List`    |
+| **Default Value**    | Type-dependent (0, false, etc.)  | `null`                                |
+
+
 ---
 
 ## 🔤 What is var type in Java?
@@ -431,19 +445,6 @@ var salary = 10.5f;     // Inferred as float
 var x = 50;         // Compiler sees this as int
 var message = "Hi"; // Compiler sees this as String
 ```
-
-
-### 🔍 Key Differences Between Primitive and Non-Primitive Types
-
-| Feature               | Primitive Data Type               | Non-Primitive Data Type               |
-|-----------------------|-----------------------------------|---------------------------------------|
-| **Definition**        | Basic built-in data types         | Custom/reference types (classes)      |
-| **Size**             | Fixed (e.g., int=4 bytes)        | Variable (depends on object)          |
-| **Memory**           | Stored in stack memory           | Object in heap, reference in stack    |
-| **Objects**          | Not objects                      | Are objects                           |
-| **Methods**          | Cannot call methods              | Have built-in methods                 |
-| **Example**          | `int`, `char`, `boolean`         | `String`, `Array`, `Class`, `List`    |
-| **Default Value**    | Type-dependent (0, false, etc.)  | `null`                                |
 
 ---
 
