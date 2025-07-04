@@ -330,6 +330,8 @@ boolean isJavaFun = true;
 ## 🎲 Data Types in Java
 Java is a *statically typed* language → data type must be declared before using a variable.
 
+`*Note :` A statically typed language is a programming language where the type of a variable is checked at compile time, before the code is executed. This means the compiler verifies that the operations performed on variables are valid based on their declared types.
+
 ### 📚 Types of Data Types:
 | Category      | Data Types                                      |
 |--------------|------------------------------------------------|
@@ -337,59 +339,141 @@ Java is a *statically typed* language → data type must be declared before usin
 | **Non-Primitive** | - `String`<br>- `Arrays`<br>- `Class`<br>- `Interface` |
 
 
-🔢 Primitive Data Types
-| Type      | Size     | Example             | Description                          |
-|-----------|----------|---------------------|--------------------------------------|
-| `byte`    | 1 byte   | `byte a = 100;`     | Small integers (-128 to 127)         |
-| `short`   | 2 bytes  | `short s = 5000;`   | Larger than byte                     |
-| `int`     | 4 bytes  | `int x = 100000;`   | Common integer type                  |
-| `long`    | 8 bytes  | `long l = 123456789L;` | Very large numbers                 |
-| `float`   | 4 bytes  | `float f = 10.5f;`  | Decimal numbers (single precision)   |
-| `double`  | 8 bytes  | `double d = 20.99;` | Decimal numbers (double precision)   |
-| `char`    | 2 bytes  | `char ch = 'A';`    | Stores a single character            |
-| `boolean` | 1 bit    | `boolean flag = true;` | True or false values              |
+### 🔢 Primitive Data Types
+- Built-in/basic data types in Java.
+- There are *8 primitive types*.
+- They store *simple values* directly.
+- Memory-efficient and *fast*.
+- *Not objects*.
+- Stored in *stack memory*.
 
-🔤 Non-Primitive Data Type
-String: Sequence of characters
+| Type      | Size     | Example             | Range | Description |
+|-----------|----------|---------------------|-------|-------------|
+| `byte`    | 1 byte   | `byte a = 100;`     | -128 to 127 | Small integers |
+| `short`   | 2 bytes  | `short s = 5000;`   | -32,768 to 32,767 | Larger than byte |
+| `int`     | 4 bytes  | `int x = 100000;`   | -2³¹ to 2³¹-1<br>(-2,147,483,648 to 2,147,483,647) | Common integer type |
+| `long`    | 8 bytes  | `long l = 123456789L;` | -2⁶³ to 2⁶³-1<br>(-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807) | Very large numbers |
+| `float`   | 4 bytes  | `float f = 10.5f;`  | ±1.4E-45 to ±3.4E+38<br>(6-7 decimal digits precision) | Single-precision floating point |
+| `double`  | 8 bytes  | `double d = 20.99;` | ±4.9E-324 to ±1.7E+308<br>(15 decimal digits precision) | Double-precision floating point |
+| `char`    | 2 bytes  | `char ch = 'A';`    | 0 to 65,535 (unsigned) | Single Unicode character |
+| `boolean` | 1 bit    | `boolean flag = true;` | true/false | Logical true/false values |
 
-java
-Copy code
+> Unicode is a universal character encoding standard that assigns a unique number (code point) to every character, symbol, and script across different languages. Java uses Unicode to represent text, allowing it to handle multiple languages and special characters consistently.
+
+```java
+ public class UnicodeLetters {
+    public static void main(String[] args) {
+
+        char latinA = 'A';          // Latin
+        char greekAlpha = 'α';      // Greek
+        char hindiKa = 'क';    // Hindi
+
+        char euro = '\u20AC';   // € (Euro symbol)
+        char sigma = '\u03A3';  // Σ (Greek Sigma)
+        String emoji = "\uD83D\uDE0E"; // 😎 (smiling face with sunglasses)
+
+        System.out.println(Character.isLetter(latinA));       // true
+        System.out.println(Character.isLetter(greekAlpha));   // true
+        System.out.println(Character.isLetter(hindiKa)); // true
+        System.out.println(Character.isLetter(chineseChar));  // true
+        System.out.println(Character.isLetter('1'));          // false (digit)
+
+        System.out.println(euro);   // Output: €
+        System.out.println(sigma);  // Output: Σ
+        System.out.println(emoji);  // Output: 😎
+    }
+}
+```
+
+### 🔤 Non-Primitive Data Type
+- Not built-in: *created using classes and interfaces*.
+- Store *multiple values* or *complex data*.
+- *Objects or references*.
+- Stored in *heap memory, variable holds **reference (address)*.
+- Examples include String, Array, Class, Interface, Enum, List, etc.
+
+
+##### - String: Sequence of characters
+
+```java
 String name = "Jayant";
-Arrays: Collection of similar types
+```
 
-java
-Copy code
+##### - Arrays: Collection of similar types
+
+```java
 int[] numbers = {1, 2, 3};
-📌 Type Casting
-✅ Implicit Casting (Widening)
-java
-Copy code
+```
+
+---
+
+## 🔤 What is var type in Java?
+#### ✅ Definition:
+- Introduced in Java 10.
+- var is a reserved type name, not a keyword
+- The compiler automatically infers the data type from the assigned value.
+- Using var as a class or interface name is not permitted. 
+
+```java
+var name = "Jayant";    // Inferred as String
+var age = 25;           // Inferred as int
+var salary = 10.5f;     // Inferred as float
+```
+> 🧠 var helps reduce boilerplate code but doesn't make Java dynamically typed.
+
+##### ❗Rules:
+- You must initialize the variable at the time of declaration.
+- Cannot assign null without explicit casting.
+- Cannot use var for class fields, method parameters, or return types (only local variables).
+
+##### 🧾 Example:
+```java
+var x = 50;         // Compiler sees this as int
+var message = "Hi"; // Compiler sees this as String
+```
+
+
+### 🔍 Key Differences Between Primitive and Non-Primitive Types
+
+| Feature               | Primitive Data Type               | Non-Primitive Data Type               |
+|-----------------------|-----------------------------------|---------------------------------------|
+| **Definition**        | Basic built-in data types         | Custom/reference types (classes)      |
+| **Size**             | Fixed (e.g., int=4 bytes)        | Variable (depends on object)          |
+| **Memory**           | Stored in stack memory           | Object in heap, reference in stack    |
+| **Objects**          | Not objects                      | Are objects                           |
+| **Methods**          | Cannot call methods              | Have built-in methods                 |
+| **Example**          | `int`, `char`, `boolean`         | `String`, `Array`, `Class`, `List`    |
+| **Default Value**    | Type-dependent (0, false, etc.)  | `null`                                |
+
+---
+
+## 📌 Type Casting
+- Typecasting, also known as type conversion, is the process of changing a variable's data type into another.
+
+It is Two types: 
+
+### ✅ Implicit Casting (Widening)
+- Implicit Type Conversion is commonly referred to as 'Automatic Type Conversion.' It occurs automatically within the compiler without requiring external intervention from the user.
+- It refers to the automatic conversion of a value from a smaller data type to a larger.
+```java
 int x = 10;
 double y = x;  // int → double automatically
-✅ Explicit Casting (Narrowing)
-java
-Copy code
+```
+
+### ✅ Explicit Casting (Narrowing)
+- Explicit Type Conversion is commonly referred to as 'Manual Type Conversion.' Conversion explicitly specified by the programmer.
+- It refers to the manual conversion of a value from a larger data type to a smaller.
+```java
 double a = 10.5;
 int b = (int) a;  // Needs manual conversion
-🧠 Summary
-Concept	Description
-Keywords	Reserved words used by Java
-Identifiers	Names for variables, classes, methods
-Variables	Containers to store data
-Data Types	Define what kind of data a variable holds
+```
+
 
 🎯 Practice Task
 Create a Java program that:
-
-Declares variables of different data types
-
-Prints their values
-
-Try both implicit and explicit type casting
-
-🔜 Next Topic
-➡ Control Statements in Java (if, else, switch, loops)
-
+  - Declares variables of different data types
+  - Prints their values
+  - Try both implicit and explicit type casting
 
 ---
 
@@ -403,7 +487,7 @@ Try both implicit and explicit type casting
 
 ## 🔜 Next Topic
 
-➡️ **Java Programming Basics: Keywords, Identifiers, Variables, and Data Types**
+➡️ **Control Statements in Java (if, else, switch, loops)**
 
 ---
 
