@@ -241,13 +241,157 @@ Hello, world!
 - Without main(), JVM doesn’t know from where to start.
 
 ### 🎯 What You Learned
-✅ JDK, JRE, JVM - definitions and differences
-✅ Installed JDK and Eclipse
-✅ Wrote and ran your first Java program
-✅ Understood structure of Java code
+- ✅ JDK, JRE, JVM - definitions and differences
+- ✅ Installed JDK and Eclipse
+- ✅ Wrote and ran your first Java program
+- ✅ Understood structure of Java code
 
 ---
 
+# 🔤 Java Programming Basics
+
+Welcome to *Module 1: Java Basics* of the Java Full Course!  
+In this module, we’ll cover the *fundamental building blocks* of Java: *keywords, **identifiers, **variables, and **data types*.
+
+---
+
+## 📌 Keywords in Java
+
+- Keywords are *reserved words* used by Java to define the *syntax and structure* of the language.
+- You *cannot* use them as variable, class, or method names.
+
+### ✅ Examples of Keywords:
+
+| Category | Examples |
+|---------|----------|
+| Access Modifiers | public, private, protected |
+| Data Types | int, float, double, char, boolean |
+| Control Flow | if, else, switch, case, for, while, do |
+| Class-related | class, interface, extends, implements, new |
+| Exception Handling | try, catch, finally, throw, throws |
+| Others | static, void, return, this, super, import, package, final |
+
+> 🧠 Tip: Java has *50 reserved keywords*. They are case-sensitive.
+
+---
+
+## 🧾 Identifiers in Java
+
+- Identifiers are the *names* you give to variables, methods, classes, etc.
+- Rules for writing identifiers:
+  - Must start with a letter (A–Z or a–z), `_`, or $
+  - Cannot start with a digit
+  - Cannot use Java keywords
+  - Case-sensitive (name ≠ Name)
+  - No spaces or special characters allowed
+
+### ✅ Valid Identifiers:
+```java
+firstName
+_totalMarks
+$salary
+myVariable123
+```
+
+### ❌ Invalid Identifiers:
+```java
+1stValue        // Starts with digit
+class           // Keyword
+total marks     // Contains space
+@value          // Special character
+```
+
+---
+
+## 🧮 Variables in Java
+- Variables are containers used to store data.
+- Every variable has:
+    - Type (what kind of data)
+    - Name (identifier)
+    - Value
+
+#### ✅ Syntax:
+```java
+dataType variableName = value;
+```
+#### ✅ Example:
+```java
+int age = 25;
+String name = "Jayant";
+boolean isJavaFun = true;
+```
+
+#### 🧠 Real Life Analogy:
+- Variable is like a labeled jar that holds something.
+    - int age = 25; → A jar labeled "age" with number 25 inside.
+
+---
+
+## 🎲 Data Types in Java
+Java is a *statically typed* language → data type must be declared before using a variable.
+
+### 📚 Types of Data Types:
+| Category      | Data Types                                      |
+|--------------|------------------------------------------------|
+| **Primitive** | - `byte`<br>- `short`<br>- `int`<br>- `long`<br>- `float`<br>- `double`<br>- `char`<br>- `boolean` |
+| **Non-Primitive** | - `String`<br>- `Arrays`<br>- `Class`<br>- `Interface` |
+
+
+🔢 Primitive Data Types
+| Type      | Size     | Example             | Description                          |
+|-----------|----------|---------------------|--------------------------------------|
+| `byte`    | 1 byte   | `byte a = 100;`     | Small integers (-128 to 127)         |
+| `short`   | 2 bytes  | `short s = 5000;`   | Larger than byte                     |
+| `int`     | 4 bytes  | `int x = 100000;`   | Common integer type                  |
+| `long`    | 8 bytes  | `long l = 123456789L;` | Very large numbers                 |
+| `float`   | 4 bytes  | `float f = 10.5f;`  | Decimal numbers (single precision)   |
+| `double`  | 8 bytes  | `double d = 20.99;` | Decimal numbers (double precision)   |
+| `char`    | 2 bytes  | `char ch = 'A';`    | Stores a single character            |
+| `boolean` | 1 bit    | `boolean flag = true;` | True or false values              |
+
+🔤 Non-Primitive Data Type
+String: Sequence of characters
+
+java
+Copy code
+String name = "Jayant";
+Arrays: Collection of similar types
+
+java
+Copy code
+int[] numbers = {1, 2, 3};
+📌 Type Casting
+✅ Implicit Casting (Widening)
+java
+Copy code
+int x = 10;
+double y = x;  // int → double automatically
+✅ Explicit Casting (Narrowing)
+java
+Copy code
+double a = 10.5;
+int b = (int) a;  // Needs manual conversion
+🧠 Summary
+Concept	Description
+Keywords	Reserved words used by Java
+Identifiers	Names for variables, classes, methods
+Variables	Containers to store data
+Data Types	Define what kind of data a variable holds
+
+🎯 Practice Task
+Create a Java program that:
+
+Declares variables of different data types
+
+Prints their values
+
+Try both implicit and explicit type casting
+
+🔜 Next Topic
+➡ Control Statements in Java (if, else, switch, loops)
+
+
+---
 
 ## 🔔 Stay Connected
 
